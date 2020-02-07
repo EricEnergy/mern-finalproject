@@ -31,8 +31,8 @@ export default function Main() {
 
     const uploadWidget = () => {
         const config = {
-            cloud_name: 'ericnrgnash',
-            upload_preset: 'Erics-preset-serv',
+            cloud_name: 'do20ip1ia',
+            upload_preset: 'lzjcjush',
             tags: ['company']
         };
         window.cloudinary.openUploadWidget(config, (error, result) => {
