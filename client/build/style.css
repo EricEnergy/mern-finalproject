@@ -1,0 +1,11 @@
+#BG {
+    /* background-color:#bbd0d5; */
+    background-image: linear-gradient(#bbd0d5,#365f68);
+    min-height: 100%;
+    
+}
+
+html {
+    background-color:#1f3236;
+}
+
