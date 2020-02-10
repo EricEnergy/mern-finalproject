@@ -27,47 +27,10 @@ const image = [
     },
     
 ]
-// const images = [
-//     {
-//         url: 'https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png?format=webp&v=1530129081',
-//         title: 'Breakfast',
-//         width: '40%',
-//     },
-// ]
-
 
 const useStyles = makeStyles(theme => ({
-    root: {
-        // width: '100%',
-        // maxWidth: 360,
-        // backgroundColor: theme.palette.background.paper,
-        // display: 'flex',
-        // flexWrap: 'wrap',
-        // justifyContent: 'space-around',
-        // overflow: 'hidden',
-        // marginTop: 10
-
-    },
     input: {
         display: 'none',
-    },
-    card: {
-        // display: 'flex',
-    },
-    details: {
-        // display: 'flex',
-        // flexDirection: 'column',
-    },
-    content: {
-        // flex: '1 0 auto',
-    },
-    cover: {
-        // position: 'relative',
-        // width: "100%",
-        // height: 250,
-        // margin: '0% 20%',
-        // borderRadius: 400,
-        // overflow: "hidden"
     },
     coverImage: {
         width: "60%",
@@ -76,44 +39,21 @@ const useStyles = makeStyles(theme => ({
         borderRadius: "360px",
         margin: '10% 20%',
         boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
-
-        // position: 'absolute',
-        // display: 'inline-block',
-        // top: '50%',
-        // left: '50%',
-        // transform: 'translate(-50%,-50%)',
-    },
-    controls: {
-        // display: 'flex',
-        // alignItems: 'center',
-        // paddingLeft: theme.spacing(1),
-        // paddingBottom: theme.spacing(1),
     },
     gridList: {
-        // margin: '5vh auto',
+        margin: '5vh auto',
+        width:'100%'
     },
     icon: {
         color: 'rgba(255, 255, 255, 0.54)',
     },
     img: {
-        width: 'auto',
-        height: 'auto',
-    },
-    btn: {
-        // width: '100%',
-        // maxWidth: 360,
-        // backgroundColor: theme.palette.background.paper,
-    },
-    nested: {
-        // paddingLeft: theme.spacing(4),
-
+        width: '100%',
     },
     table: {
-        // minWidth: 650,
         overflowY: 'scroll',
         marginTop: '5vh',
         marginBottom: '5vh',
-        // maxHeight: '5vh',
     },
     TOTtable: {
         marginBottom: '5vh',
@@ -130,27 +70,6 @@ const useStyles = makeStyles(theme => ({
         height: '20vh',
         marginBottom: '5vh',
     },
-    // image: {
-    //     position: 'relative',
-    //     height: 200,
-    //     [theme.breakpoints.down('xs')]: {
-    //         width: '100% !important', // Overrides inline-style
-    //         height: 100,
-    //     },
-    //     '&:hover, &$focusVisible': {
-    //         zIndex: 1,
-    //         '& $imageBackdrop': {
-    //             opacity: 0.15,
-    //         },
-    //         '& $imageMarked': {
-    //             opacity: 0,
-    //         },
-    //         '& $imageTitle': {
-    //             border: '4px solid currentColor',
-    //         },
-    //     },
-    // },
-    // focusVisible: {},
     imageButton: {
         position: 'absolute',
         left: 0,
@@ -162,38 +81,6 @@ const useStyles = makeStyles(theme => ({
         justifyContent: 'center',
         color: theme.palette.common.white,
     },
-    // imageSrc: {
-    //     position: 'absolute',
-    //     left: 0,
-    //     right: 0,
-    //     top: 0,
-    //     bottom: 0,
-    //     backgroundSize: 'cover',
-    //     backgroundPosition: 'center 40%',
-    // },
-    // imageBackdrop: {
-    //     position: 'absolute',
-    //     left: 0,
-    //     right: 0,
-    //     top: 0,
-    //     bottom: 0,
-    //     backgroundColor: theme.palette.common.black,
-    //     opacity: 0.4,
-    //     transition: theme.transitions.create('opacity'),
-    // },
-    // imageTitle: {
-    //     position: 'relative',
-    //     padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${theme.spacing(1) + 6}px`,
-    // },
-    // imageMarked: {
-    //     height: 3,
-    //     width: 18,
-    //     backgroundColor: theme.palette.common.white,
-    //     position: 'absolute',
-    //     bottom: -2,
-    //     left: 'calc(50% - 9px)',
-    //     transition: theme.transitions.create('opacity'),
-    // },
 }));
 
 
@@ -204,19 +91,21 @@ export default function Search() {
     const [companyImages, setcompanyImages] = useState()
     const user = JSON.parse(localStorage.getItem('user'))
     const userID = user.data.user._id
+    const [newImages, setNewImages] = useState();
 
     useEffect(() => {
             API.getimages(user.data.user._id)
                 .then(res => setcompanyImages(res.data))
                 .catch(err => console.log(err));
-    }, [])
-
-
+    }, [newImages])
+    function childDidMount(data) {
+        setNewImages(data);
+    }
     
     function loadpageimages() {
      return companyImages ? companyImages.postImageURL.map(tile => (
-        <GridListTile key={tile} 
-        style={{ width: 'auto' }}
+        <GridListTile key={tile}
+        style={{ width: '50%', height: 'inherit' }}
         >
             <img className={classes.img} src={tile} alt={tile.title} />
                 }
@@ -248,13 +137,12 @@ export default function Search() {
 
     useEffect(() => {
         loadpageimages();
-    },[companyImages])
+    },[])
 
 
     useEffect(() => {
         getAppointments();
     },[userID])
-
 
     function renderRows() {
         if(appointments.length >= 1) {
@@ -275,7 +163,6 @@ export default function Search() {
 
     return (
         <Container>
-            {/* <h1>Company Page!</h1> */}
             <Grid>
                 <Row >
                     <Col size='xs-12 sm-12 md-12 lg-12'>
@@ -308,7 +195,7 @@ export default function Search() {
                                     />
                                     <span className={classes.imageBackdrop} />
                                     <span className={classes.imageButton}>
-                                        <Main />
+                                        <Main callback={childDidMount}/>
                                     </span>
                                 </ButtonBase>
                         </div>
@@ -371,7 +258,7 @@ export default function Search() {
                             >
                                 <GridListTile 
                                 key={image[0].title} 
-                                style={{ width: 'auto' }}
+                                style={{ width: '50%', height: 'inherit' }}
                                 >
                                     <img className={classes.img} src={image[0].url} alt={image[0].title} />
                                     <GridListTileBar
@@ -381,7 +268,7 @@ export default function Search() {
                                             <IconButton aria-label={`info about ${image[0].title}`} className={classes.icon}>
                                                 <input accept="image/*" className={classes.input} id="icon-button-file" type="file" />
                                                 <label htmlFor="icon-button-file">
-                                                    <Main2 />
+                                                    <Main2 callback={childDidMount}/>
                                                 </label>
                                             </IconButton>
                                         }

@@ -30,31 +30,14 @@ const categories = [
 ];
 
 const useStyles = makeStyles(theme => ({
-    root: {
-        // width: '100%',
-        // maxWidth: 360,
-        // backgroundColor: theme.palette.background.paper,
-        // display: 'flex',
-        // flexWrap: 'wrap',
-        // justifyContent: 'space-around',
-        // overflow: 'hidden',
-        // marginTop: 10
-        // marginTop: '5vh',
-        },
     card: {
         paddingTop: '5vh',
         maxHeight: '90vh',
         overflowY: 'scroll',
         backgroundColor: 'rgba(187,208,213,0)',
-        // font-family: 'Courier New', Courier, monospace;
     },
     details: {
-        // display: 'flex',
-        // flexDirection: 'column',
         color: 'White',
-    },
-    content: {
-        // flex: '1 0 auto',
     },
     cover: {
         width: "100%",
@@ -77,24 +60,19 @@ const useStyles = makeStyles(theme => ({
         color: 'rgba(255, 255, 255, 0.54)',
     },
     img: {
+        height: 300
     },
     btn: {
         maxHeight: '85vh',
         paddingTop: '5vh',
     },
-    nested: {
-        // paddingLeft: theme.spacing(4),
-    },
     description: {
         overflowY: 'scroll',
         height: '20vh',
-        // marginBottom: '5vh',
     },
     companyName: {
         marginBottom: '2vh',
-        // fontWeight: 'bold',
         textShadow: '2px 2px 4px #000000',
-
     },
     companyINFO: {
         marginBottom: '2vh',
@@ -251,7 +229,6 @@ export default function Search() {
                                     >
                                         <ListItemText primary={'Categories'} />
                                         <hr></hr>
-                                      
                                     </ListItem>
                                     {sideBar.map(o =>
                                         <ListItem
@@ -328,8 +305,6 @@ export default function Search() {
                                                                     <TextField onChange={(e) => setAppointName(e.target.value)}
                                                                     id="outlined-basic" label="Name" variant="outlined" />
                                                                 </form>
-
-
                                                             </DialogContent>
                                                             <DialogActions>
                                                                 <Button autoFocus onClick={handleClose} color="primary">
@@ -357,11 +332,14 @@ export default function Search() {
                                 </Col>
                             </Row>
                             <Row>
-                                <Col size="md-12">
+                            <Col size="md-2">
+                                <div></div>
+                            </Col>
+                                <Col size="md-8">
                                     <div className={classes.gridList}>
-                                        <GridList cellHeight={200} cols={3} style={{ width: '200' }}>
+                                        <GridList cellHeight={300} cols={3} style={{ width: '200' }}>
                                             {selectedImages ? selectedImages.postImageURL.map(tile => (
-                                                <GridListTile key={tile} style={{ width: '200' }}>
+                                                <GridListTile key={tile} style={{ width: 300 }}>
                                                     <img className={classes.img} src={tile} alt={'Name'} />
                                                 </GridListTile>
                                             )) :<p>No images found </p>
@@ -371,6 +349,8 @@ export default function Search() {
                                         </GridList>
                                     </div>
                                 </Col>
+                                <Col size="md-2">
+                            </Col>
                             </Row>
                         </Card>
                     </Col>

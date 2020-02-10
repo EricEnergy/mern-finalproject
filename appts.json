@@ -1,0 +1,26 @@
+[
+    {
+        "fullName": "John Wick",
+        "email": "jwick@thecontinental.com",
+        "phoneNumber": "800-555-1234",
+        "apptTime": "Morning: 8am - 12pm",
+        "contactTime": "Evening: 5pm - 9pm",
+        "comments": "I'm thinking I'm back"
+    },
+    {
+        "fullName": "Tony Stark",
+        "email": "ironman@starkindustries.com",
+        "phoneNumber": "800-555-4567",
+        "apptTime": "Afternoon: 1pm - 5pm",
+        "contactTime": "Morning: 8am - 12pm",
+        "comments": "I am Iron Man"
+    },
+    {
+        "fullName": "John McLane",
+        "email": "jmlane@thewrongplace.com",
+        "phoneNumber": "800-555-9876",
+        "apptTime": "Evening: 5pm - 9pm",
+        "contactTime": "Afternoon: 1pm - 5pm",
+        "comments": "Yippee-ki-yay."
+    }
+]

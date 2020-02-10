@@ -9,23 +9,25 @@
 
 This application is intended as a tool for small business owners in the services industry to connect with potential customers.
 
-By creating an account in the app, the business owners are able to create their own company profile page which will display their company info and images of their previous work for potential customers to browse thru.
+By creating an account in the application, the business owners are able to create their own company profile page which will display their company information and images of their previous work for potential customers to browse through.
 
-Potential customers have the option to setup an appointment by providing their contact information which is made available to the business owners and gets added to the appointments section in their profile page.
+Potential customers have the option to schedule an appointment by providing their contact information.Business owners can see it and the appointment will be added to the appointments section in their profile page.
 
 ---
+## Application Screenshots
+![serv](https://user-images.githubusercontent.com/56613553/74096475-2f40a580-4ac5-11ea-9d30-67f7dbbdda29.jpg)
 
 ## How to use this App
 
 ### As a Potential Client
 
-To browse thru the different companies offering services you will use the sidebar menu located on the left side of the homepage.
+Use the sidebar menu located on the left side of the homepage to browse through the different companies that offering services.
 
-Initially, the sidebar will display the different service categories. Once you click on the desired category, a list of all the available companies within such category will populate. Click on any of the company names to show their information.
+Initially, the sidebar will display the different service categories. Once you click on the desired category, a list of all the available companies within such category will populate. Click on any of the company names to see their information.
 
 The selected company's information will be displayed in the main area of the page. On the top you will be able to see the company's summary information such as place of business and description. The bottom area of the page is where you will be able to browse thru different images of their previous work.
 
-If you decide to setup an appointment with any of the companies, you're able to do so by clicking on the "appointment" button located on the right side of the page. Once you click on the button, a form will pop up where you can select the date and time for your appointment. Once you have entered the requested information, click "ok" to send the appointment to the company.
+If you decide to schedule an appointment with any of the companies, you will be able to do so by clicking on the "appointment" button located on the right side of the page. Once you click on the button, a form will pop up where you can select the date and time for your appointment. Once you have entered the requested information, click "ok" to send the appointment to the company.
 
 ### As a Business Owner
 
