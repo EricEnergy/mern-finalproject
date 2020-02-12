@@ -67,8 +67,11 @@ const useStyles = makeStyles(theme => ({
         paddingTop: '5vh',
     },
     description: {
+        
         overflowY: 'scroll',
         height: '20vh',
+        fontWeight: 'bold',
+
     },
     companyName: {
         marginBottom: '2vh',
@@ -278,7 +281,7 @@ export default function Search() {
                                                     {servInfo ? 
                                                     <div>
                                                         <Button variant="outlined" style={{borderColor: 'white', color: 'white'}} color="secondary" onClick={handleClickOpen}>
-                                                            Appointment
+                                                            Set Appointment
                                                         </Button>
                                                         <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
                                                             <DialogTitle id="customized-dialog-title" onClose={handleClose}>
@@ -323,7 +326,12 @@ export default function Search() {
                                             <Row>
                                                 <Col size='md-12'>
                                                     <Typography variant="subtitle1" color="textSecondary" className={classes.description}>
-                                                        Description: {servInfo ? servInfo[0].companyDescription : `Our team at Serv wanted to bring the services of trademen and women to one place where you can find them and they can showcase their craft.`}
+                                                        Company Description: <br></br> {servInfo ? servInfo[0].companyDescription : <h5>This application is intended as a tool for small business owners in the services industry to connect with potential customers.<br></br>
+
+By creating an account in the application, the business owners are able to create their own company profile page which will display their company information and images of their previous work for potential customers to browse through.
+<br></br>
+Potential customers have the option to schedule an appointment by providing their contact information while business owners can see it and the appointment will be added to the appointments section in their profile page.
+</h5>}
                                                     </Typography>
                                                 </Col>
                                             </Row>
