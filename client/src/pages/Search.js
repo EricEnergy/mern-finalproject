@@ -44,9 +44,7 @@ const useStyles = makeStyles(theme => ({
         height: '100%',
     },
     coverImage: {
-        boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
         width: "90%",
-        borderRadius: "360px",
         margin: '5% 5%',
     },
     controls: {
@@ -254,7 +252,7 @@ export default function Search() {
                                         <img
                                             alt= 'cover'
                                             className={classes.coverImage}
-                                            src={selectedImages ? selectedImages.companyImageURL :"./group2.jpg"}
+                                            src={selectedImages ? selectedImages.companyImageURL :"./servICON.png"}
                                             title="Live from space album cover"
                                         />
                                     </div>
@@ -265,13 +263,13 @@ export default function Search() {
                                             <Row>
                                                 <Col size='xs-6 md-6'>
                                                     <Typography component="h3" variant="h3" className={classes.companyName}>
-                                                        {servInfo ? servInfo[0].companyName : 'Serv Team'}
+                                                        {servInfo ? servInfo[0].companyName : 'Welcome To Serv'}
                                                     </Typography>
                                                     <Typography variant="subtitle1" color="textSecondary" className={classes.companyINFO}>
-                                                        Category: {servInfo ? servInfo[0].companyCategory : 'Serv'}
+                                                        Category: {servInfo ? servInfo[0].companyCategory : ''}
                                                     </Typography>
                                                     <Typography variant="subtitle1" color="textSecondary" className={classes.companyINFO}>
-                                                        Location: {servInfo ? `${servInfo[0].companyCity}, ${servInfo[0].companyState}` : 'Nashville, TN'}
+                                                        Location: {servInfo ? `${servInfo[0].companyCity}, ${servInfo[0].companyState}` : ''}
                                                     </Typography>
                                                 </Col>
                                                 <Col size='xs-6 md-6'>
@@ -342,7 +340,7 @@ export default function Search() {
                                                 <GridListTile key={tile} style={{ width: 300 }}>
                                                     <img className={classes.img} src={tile} alt={'Name'} />
                                                 </GridListTile>
-                                            )) :<p>No images found </p>
+                                            )) :<p> </p>
 
                                             })
                                         }
