@@ -337,13 +337,13 @@ export default function Search() {
                             </Col>
                                 <Col size="md-8">
                                     <div className={classes.gridList}>
-                                    {/* <img className={classes.img} src={tile} alt={'Name'} /> */}
 
                                         <GridList cellHeight={300} cols={3} style={{ width: '200' }}>
                                             {selectedImages ? selectedImages.postImageURL.map(tile => (
                                                 <GridListTile key={tile} style={{ width: 300 }}>
                                                        <ModalImage
-                                                        smallSrcSet={tile}
+                                                        // smallSrcSet={tile}
+                                                        src={tile}
                                                         large={tile}
                                                         alt='Name' />
                                                 </GridListTile>
