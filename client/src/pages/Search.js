@@ -343,7 +343,7 @@ export default function Search() {
                                                 <GridListTile key={tile} style={{ width: 300 }}>
                                                        <ModalImage
                                                         // smallSrcSet={tile}
-                                                        src={tile}
+                                                        small={tile}
                                                         large={tile}
                                                         alt='Name' />
                                                 </GridListTile>
