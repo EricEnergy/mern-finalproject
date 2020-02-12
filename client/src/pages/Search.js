@@ -337,18 +337,17 @@ export default function Search() {
                             </Col>
                                 <Col size="md-8">
                                     <div className={classes.gridList}>
-                                   
+                                    {/* <img className={classes.img} src={tile} alt={'Name'} /> */}
+
                                         <GridList cellHeight={300} cols={3} style={{ width: '200' }}>
                                             {selectedImages ? selectedImages.postImageURL.map(tile => (
                                                 <GridListTile key={tile} style={{ width: 300 }}>
-
                                                        <ModalImage
-                                                        className={classes.img}
-                                                        src={tile ? 'https://photoevo.com/wp-content/uploads/2016/05/300X300.png' : 'https://photoevo.com/wp-content/uploads/2016/05/300X300.png'}
-                                                        alt={'Name'} />
+                                                        smallSrcSet={tile}
+                                                        large={tile}
+                                                        alt='Name' />
                                                 </GridListTile>
-                                            )) :<p> </p>
-
+                                            )) :<p></p>
                                             })
                                         }
                                         </GridList>
