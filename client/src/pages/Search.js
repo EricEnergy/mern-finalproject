@@ -12,6 +12,8 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Avatar from '@material-ui/core/Avatar';
+import ModalImage from "react-modal-image";
+
 // IMGs
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
@@ -335,16 +337,21 @@ export default function Search() {
                             </Col>
                                 <Col size="md-8">
                                     <div className={classes.gridList}>
+                                    {/* <img className={classes.img} src={tile} alt={'Name'} /> */}
+
                                         <GridList cellHeight={300} cols={3} style={{ width: '200' }}>
                                             {selectedImages ? selectedImages.postImageURL.map(tile => (
                                                 <GridListTile key={tile} style={{ width: 300 }}>
-                                                    <img className={classes.img} src={tile} alt={'Name'} />
+                                                       <ModalImage
+                                                        smallSrcSet={tile}
+                                                        large={tile}
+                                                        alt='Name' />
                                                 </GridListTile>
-                                            )) :<p> </p>
-
+                                            )) :<p></p>
                                             })
                                         }
                                         </GridList>
+ 
                                     </div>
                                 </Col>
                                 <Col size="md-2">

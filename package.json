@@ -32,6 +32,7 @@
     "mongoose-type-phone": "^1.0.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-materialize": "^3.5.9"
+    "react-materialize": "^3.5.9",
+    "react-modal-image": "^2.5.0"
   }
 }
