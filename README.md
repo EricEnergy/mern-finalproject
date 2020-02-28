@@ -17,7 +17,18 @@ Potential customers have the option to schedule an appointment by providing thei
 ## Application Screenshots
 ![serv](https://user-images.githubusercontent.com/56613553/74096475-2f40a580-4ac5-11ea-9d30-67f7dbbdda29.jpg)
 
-## How to use this App
+
+## How this Works
+![homescreen](client/public/e1.jpg)
+- Weclome to the home screen. Here you will click a catagory on the left to see buisnesses that meet that criteria. 
+
+![clientprofile](client/public/e2.jpg)
+- Here you will see this clients profile after clicking on the barershop tab and then their company profile. Here you can see the companies description, posted pictures, as well as being able to schedule an appointment.
+
+![clientprofile](client/public/e3.jpg)
+![clientprofile](client/public/e4.jpg)
+
+- After clicking on the profile tab on the right side of the navbar, you will be sent to the backend of your users profile. This is where a company will post new photos, and see upcoming schedules.
 
 ### As a Potential Client
 
